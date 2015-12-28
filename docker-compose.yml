@@ -1,0 +1,25 @@
+lugweb:
+  
+  build: .
+  
+  ports:
+  
+    - "80:80"
+
+    - "11211:11211"
+
+    - "443:443"
+  
+  volumes:
+   
+    - .:/code
+
+  links:
+
+    - memcache.server
+
+memcache.server:
+
+  image: memcached
+
+
